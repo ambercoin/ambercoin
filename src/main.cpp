@@ -46,7 +46,7 @@ unsigned int nStakeMaxAge = 60 * 60 * 24 * 100;	// stake age of full weight: -1
 unsigned int nStakeTargetSpacing = 120;			// 120 sec block spacing
 unsigned int nStakeTargetSpacing2 = 60;			// 60 sec block spacing
 
-int64 nChainStartTime = 1398199027;
+int64 nChainStartTime = 1408206876;
 int nCoinbaseMaturity = 128;
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2547,7 +2547,7 @@ bool LoadBlockIndex(bool fAllowNew)
             return false;
 
         // Genesis block
-        const char* pszTimestamp = "This is the brand new AmberCoin genesis block string";
+        const char* pszTimestamp = "AmberCoin makes amber worldwide";
         CTransaction txNew;
         txNew.nTime = nChainStartTime;
         txNew.vin.resize(1);
@@ -2560,10 +2560,10 @@ bool LoadBlockIndex(bool fAllowNew)
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1398205046;
+        block.nTime    = 1408206876; 
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 380217;
-        if (false && (block.GetHash() != hashGenesisBlock)) {
+        block.nNonce   = 330513; // 
+        if (true && (block.GetHash() != hashGenesisBlock)) {
 
         // This will figure out a valid hash and Nonce if you're
         // creating a different genesis block:
@@ -2585,7 +2585,7 @@ bool LoadBlockIndex(bool fAllowNew)
         printf("block.nTime = %u \n", block.nTime);
         printf("block.nNonce = %u \n", block.nNonce);
 
-        assert(block.hashMerkleRoot == uint256("9867907dca9d8dd34cb5424091f5ef374e36407ad196fb28f6cd628fdf4e6220"));
+        assert(block.hashMerkleRoot == uint256("733165145567dbe43a06ddc6e55b62f8f6aceeb602f1d66f1a8a8f9d7b582dd6"));
 		assert(block.GetHash() == (!fTestNet ? hashGenesisBlock : hashGenesisBlockTestNet));
 
         // Start new block file

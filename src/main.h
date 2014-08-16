@@ -31,8 +31,8 @@ static const unsigned int MAX_BLOCK_SIZE_GEN = MAX_BLOCK_SIZE/2;
 static const unsigned int MAX_BLOCK_SIGOPS = MAX_BLOCK_SIZE/50;
 static const unsigned int MAX_ORPHAN_TRANSACTIONS = MAX_BLOCK_SIZE/100;
 static const unsigned int MAX_INV_SZ = 30000;
-static const int64 MIN_TX_FEE = .01 * CENT;
-static const int64 MIN_RELAY_TX_FEE = .01 * CENT;
+static const int64 MIN_TX_FEE = .1 * CENT;
+static const int64 MIN_RELAY_TX_FEE = .1 * CENT;
 static const int64 MAX_MONEY = 1000000000 * COIN;
 static const int64 MAX_MONEY2 = 1000000000 * COIN;			// 1 bil
 static const int64 CIRCULATION_MONEY = MAX_MONEY2;
@@ -41,7 +41,7 @@ static const int64 MIN_MINT_PROOF_OF_STAKE = 0.01 * COIN;	// 3% annual interest
 static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE;
 static const int CUTOFF_POW_BLOCK = 50000;
 static const int CUTOFF_POS_BLOCK = 50000;
-static const int X11_CUTOFF_TIME = 1403395200;
+static const int X11_CUTOFF_TIME = 1408206876; //  1403395200
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 // Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp.
 static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20 1985 UTC
@@ -52,8 +52,8 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x00000e5fcb52c612b989715cb5e9cad4c071c76e8263980b45d34e17cff6f732");
-static const uint256 hashGenesisBlockTestNet ("0x");
+static const uint256 hashGenesisBlockOfficial("0x000003936efb068f54c9dec4c94e8d825d0ec7cc8cfe6e7d54ae042af09a4e0c");
+static const uint256 hashGenesisBlockTestNet ("0x000003936efb068f54c9dec4c94e8d825d0ec7cc8cfe6e7d54ae042af09a4e0c");
 
 static const int64 nMaxClockDrift = 2 * 60 * 60;        // two hours
 
