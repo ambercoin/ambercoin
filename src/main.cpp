@@ -1066,7 +1066,7 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 
 	int64 nTargetSpacing;
 	if (pindexPrev->nHeight < 50000)
-		nTargetSpacing = 120;
+		nTargetSpacing = fProofOfStake? nStakeTargetSpacing : min(nTargetSpacingWorkMax, (int64) nStakeTargetSpacing * (1 + pindexLast->nHeight - pindexPrev->nHeight));
 	else nTargetSpacing = fProofOfStake? nStakeTargetSpacing2 : min(nTargetSpacingWorkMax2, (int64) nStakeTargetSpacing2 * (1 + pindexLast->nHeight - pindexPrev->nHeight));
 	
     int64 nInterval = nTargetTimespan / nTargetSpacing;
