@@ -1056,7 +1056,11 @@ unsigned int GetNextTargetRequired(const CBlockIndex* pindexLast, bool fProofOfS
 	else if(nActualSpacing > nTargetTimespan)
 	{
 		// printf(">> nActualSpacing = %"PRI64d" corrected to nTargetTimespan (900).\n", nActualSpacing);
-		nActualSpacing = nTargetTimespan;
+		nActualSpacing = 1;
+
+// 		nActualSpacing = nTargetTimespan;
+
+
 	}
 
     // ppcoin: target change every block
